@@ -167,7 +167,11 @@ export default {
       return this.characters.filter(
         (character) =>
           !this.excludedCharacters.includes(character) &&
+<<<<<<< HEAD
           !this.ignoredCharacters.has(character),
+=======
+          !this.ignoredCharacters.has(character)
+>>>>>>> main
       );
     },
   },
@@ -218,7 +222,11 @@ export default {
       lines.forEach((line) => {
         // 예: "[2/6/2025, 1:51:14 PM] 캐릭터이름" 형식에서 캐릭터 이름 추출
         const match = line.match(
+<<<<<<< HEAD
           /^\[\d{1,2}\/\d{1,2}\/\d{4}, \d{1,2}:\d{2}:\d{2} (AM|PM)\] (.+)$/,
+=======
+          /^\[\d{1,2}\/\d{1,2}\/\d{4}, \d{1,2}:\d{2}:\d{2} (AM|PM)\] (.+)$/
+>>>>>>> main
         );
         if (match) {
           const characterName = match[2].trim();
@@ -244,20 +252,32 @@ export default {
 
         // 1. Exact match (case-insensitive)
         targetCharacter = this.characters.find(
+<<<<<<< HEAD
           (c) => c.toLowerCase() === fileNameWithoutExt,
+=======
+          (c) => c.toLowerCase() === fileNameWithoutExt
+>>>>>>> main
         );
 
         // 2. Character name contains filename (case-insensitive)
         if (!targetCharacter) {
           targetCharacter = this.characters.find((c) =>
+<<<<<<< HEAD
             c.toLowerCase().includes(fileNameWithoutExt),
+=======
+            c.toLowerCase().includes(fileNameWithoutExt)
+>>>>>>> main
           );
         }
 
         // 3. Filename contains character name (case-insensitive)
         if (!targetCharacter) {
           targetCharacter = this.characters.find((c) =>
+<<<<<<< HEAD
             fileNameWithoutExt.includes(c.toLowerCase()),
+=======
+            fileNameWithoutExt.includes(c.toLowerCase())
+>>>>>>> main
           );
         }
 
@@ -274,7 +294,11 @@ export default {
           reader.readAsDataURL(file);
         } else {
           console.warn(
+<<<<<<< HEAD
             `No suitable character found for file: ${file.name}. Skipping.`,
+=======
+            `No suitable character found for file: ${file.name}. Skipping.`
+>>>>>>> main
           );
         }
       });
@@ -333,6 +357,7 @@ export default {
       const gray = r * 0.299 + g * 0.587 + b * 0.114;
       const saturationFactor = 0.3; // 0.3만큼 원본 색상 유지 (채도 감소)
       const mutedR = Math.round(
+<<<<<<< HEAD
         r * saturationFactor + gray * (1 - saturationFactor),
       );
       const mutedG = Math.round(
@@ -340,6 +365,15 @@ export default {
       );
       const mutedB = Math.round(
         b * saturationFactor + gray * (1 - saturationFactor),
+=======
+        r * saturationFactor + gray * (1 - saturationFactor)
+      );
+      const mutedG = Math.round(
+        g * saturationFactor + gray * (1 - saturationFactor)
+      );
+      const mutedB = Math.round(
+        b * saturationFactor + gray * (1 - saturationFactor)
+>>>>>>> main
       );
       return `rgb(${mutedR}, ${mutedG}, ${mutedB})`;
     },
@@ -596,7 +630,11 @@ ${this.generatedCSS}
       .map((section) => {
         const lines = section.trim().split("\n");
         const filteredLines = lines.filter(
+<<<<<<< HEAD
           (line) => !line.trim().toLowerCase().startsWith("hp"),
+=======
+          (line) => !line.trim().toLowerCase().startsWith("hp")
+>>>>>>> main
         );
         const timestampAndAuthor = filteredLines[0]?.match(/^\[(.*?)\] (.+)$/);
         const timestamp = timestampAndAuthor
@@ -621,7 +659,11 @@ ${this.generatedCSS}
         const messageLines = filteredLines
           .slice(1)
           .map(
+<<<<<<< HEAD
             (line) => `<span class="preserve-whitespace">${line.trim()}</span>`,
+=======
+            (line) => `<span class="preserve-whitespace">${line.trim()}</span>`
+>>>>>>> main
           )
           .join("<br>");
 
