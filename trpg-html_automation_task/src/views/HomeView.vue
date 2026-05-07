@@ -8,6 +8,10 @@
           alt="Guild icon"
           loading="lazy"
         />TXT 파일 처리
+        <p>
+          txt 첨부 → 이미지 추가 → 칸 채워넣기 → 출력버튼 누르기(중요) →
+          다운로드
+        </p>
       </h1>
       <input
         type="file"
@@ -18,6 +22,7 @@
       <p class="image-text">
         상자를 클릭하면 이미지를 넣을수 있습니다. <br />여러장 첨부할 경우
         캐릭터이름과 사진이미지가 매칭되면 나머지도 자동적으로 첨부됩니다.
+        <br />선택하지 않은 프로필은 공백(검은색)으로 보입니다.
       </p>
       <!-- 라디오 버튼 추가 -->
       <!-- <h1>시나리오 선택</h1>
@@ -500,20 +505,27 @@ ${this.generatedCSS}
     }
     .preamble__rule {
       text-align: left;
-      font-size: 14px;
+      font-size: 12px;
       color: #888;
       text-transform: uppercase;
       letter-spacing: 1px;
       margin: 0;
+      text-align: left;
     }
     .preamble__entry {
-      font-size: 32px;
+      font-size: 18px;
+      text-align: left;
       color: #e0e0e0;
-      margin: 5px 0;
+      margin: 5px 0
+      text-align: left;
+}
+/* 날짜 텍스트 스타일 */
+.date-small {
+  font-size: 18px; /* 제목보다 작은 글씨 크기 */
     }
     .preamble__participants {
-    text-align: left;
-      font-size: 16px;
+     text-align: left;
+      font-size: 12px;
       color: #b0b0b0;
       margin: 0;
     }
@@ -721,6 +733,7 @@ div.css-custom {
   top: 8px;
 }
 h1 {
+  /* TXT 파일 처리 제목 */
   margin-top: 20px; /* 각 h1 태그 위에 패딩 추가 */
   font-size: 24px;
   font-weight: bold;
